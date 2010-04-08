@@ -1,91 +1,199 @@
 " Enable pathogen
 call pathogen#runtime_append_all_bundles()
 
-" UTF-8 All the way
-scriptencoding utf-8
+"Behave somewhat like windows app.
+source $VIMRUNTIME/mswin.vim
 
-" Use zsh.
-set shell=zsh
-
-" Enable filetype-specific indenting, syntax, and plugins
-filetype plugin indent on
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
 set nocompatible
+
+"allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+"arrow or motion over line breaks
+set whichwrap=<,>,h,l,[,] 
+
+"store lots of :cmdline history
+set history=1000
+
+set showcmd     "show incomplete cmds down the bottom
+set showmode    "show current mode down the bottom
+
+set ignorecase  "case insensitive search
+set incsearch   "find the next match as we type the search
+set hlsearch    "hilight searches by default
+
+" assume the /g flag on :s substitutions to replace all matches in a line:
+set gdefault
+
+set nowrap      "dont wrap lines
+set linebreak   "wrap lines at convenient points
+set number      "line numbers
+
+"indent settings
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+
+"display tabs and trailing spaces
+set list
+set listchars=tab:?·,trail:·,nbsp:·
+
+set formatoptions-=o "dont continue comments when pushing o/O
+
+"vertical/horizontal scroll off settings
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+
+"load ftplugins and indent files
+filetype plugin on
+filetype indent on
+
+"turn on syntax highlighting
 syntax on
 
-" Disable bell.
-set vb t_vb=
+"some stuff to get the mouse going in term
+set mouse=a
+set ttymouse=xterm2
 
-" Set to auto read when a file is changed from the outside
-set autoread
+"hide buffers when not displayed
+set hidden
 
-" COLOR SUPPORT
+"make <c-l> clear the highlight as well as redraw
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
 
-" Explicitly set 256 color support
-" set t_Co=256
+"map to bufexplorer
+nnoremap <C-B> :BufExplorer<cr>
 
-colorscheme vividchalk " github256 
+"new tab
+nnoremap <C-t> :tabnew<CR>
 
-" TEXT SETTINGS
-
-" Disable line wrapping
-set nowrap
-
-" use indents of 2 spaces, and have them copied down lines:
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-
-" line numbers
-" set number 
-set nonumber " trying no numbers for  day
-set numberwidth=3
-
-
-" KEY BINDINGS
-
-let mapleader = ","
-
-" WINDOW SPLITTING
-
-" Open new horizontal split windows below current
-set splitbelow
-
-" Open new vertical split windows to the right
-set splitright
-
-
-" Set temporary directory (don't litter local dir with swp/tmp files)
-set directory=/tmp/
-
-" Use the tab complete menu
-set wildmenu
-
-" KEYBINDINGS
+"make Y consistent with C and D
+nnoremap Y y$
 
 " Quick, jump out of insert mode while no one is looking
 imap ii <Esc>
 
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
+" Remap F1 from Help to ESC.  No more accidents
+nmap <F1> <Esc>
+map! <F1> <Esc>
 
+" Insert current date.
+iab <expr> ddate strftime("%m/%d/%Y")
+iab <expr> sdate strftime("*%m/%d/%Y*")
+iab d: Done: 
+iab s: Skip: 
 
-" CUSTOM PLUGINS
+" Indent visual block
+" The tab version throws errors on startup
+vnoremap > >gv
+vnoremap < <gv
 
-" FuzzyFinder Path Splitting (ala textmate)
-let g:fuf_splitPathMatching = 1
+let mapleader = ","
+map <silent> <leader>d :NERDTreeToggle<cr>
+map <silent> <leader>f :FuzzyFinderTextMate<CR>
+map <silent> <leader>t :TlistToggle<CR>
+map <silent> <leader>b :BufExplorerHorizontalSplit<CR>
+map <silent> <leader>bb :BufExplorerHorizontalSplit<CR>
+map <silent> <leader>k :bd<CR>
+nmap <silent> <Leader>cd :cd %:p:h<CR>
 
-" CUSTOM FUNCTIONS
+" Switch to last buffer
+nnoremap <C-Tab> :b#<CR>
+inoremap <C-Tab> <Esc>:b#<CR>
 
-" Add RebuildTagsFile function/command
-function! s:RebuildTagsFile()
-  !ctags -R --exclude=coverage --exclude=files --exclude=public --exclude=log --exclude=tmp --exclude=vendor *
+" Use motions to move between windows.
+nnoremap <C-h> <C-w><Left>
+inoremap <C-h> <Esc><C-w><Left>
+" <c-l> will also clear highlights.
+nnoremap <C-l> :nohls<CR><ESC><C-w><Right>
+inoremap <C-l> <C-O>:nohls<CR><Esc><C-w><Right>
+inoremap <C-k> <Esc><C-w><Up>
+nnoremap <C-k> <C-w><Up>
+nnoremap <C-j> <C-w><Down>
+inoremap <C-j> <Esc><C-w><Down>
+
+" Scroll rather than the default PageUp and PageDown.
+nnoremap <silent> <PageUp> <C-U><C-U>
+vnoremap <silent> <PageUp> <C-U><C-U>
+inoremap <silent> <PageUp> <C-\><C-O><C-U><C-\><C-O><C-U>
+nnoremap <silent> <PageDown> <C-D><C-D>
+vnoremap <silent> <PageDown> <C-D><C-D>
+inoremap <silent> <PageDown> <C-\><C-O><C-D><C-\><C-O><C-D>
+
+" Switch between tabs left and right.
+map L :tabn<CR>
+map H :tabp<CR>
+" Stop accidents.
+map K <Esc>
+" Alternte method.
+map <C-A-Right> :tabn<CR>
+vmap <C-A-Right> <Esc>:tabn<CR>
+imap <C-A-Right> <Esc>:tabn<CR>
+map <C-A-Left> :tabp<CR>
+vmap <C-A-Left> <Esc>:tabp<CR>
+imap <C-A-Left> <Esc>:tabp<CR>
+
+"set diffexpr=MyDiff()
+" Expand or shrink window.
+if bufwinnr(1)
+  map + <C-W>+
+  map _ <C-W>-
+endif
+
+" Auto close braces.
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+" Omni-completion.
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+\ "\<lt>C-n>" :
+\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
+"visual search mappings
+function! s:VSetSearch()
+    let temp = @@
+    norm! gvy
+    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    let @@ = temp
 endfunction
-command! -nargs=0 RebuildTagsFile call s:RebuildTagsFile()
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
+"jump to last cursor position when opening a file
+"dont do it when writing a commit log entry
+autocmd BufReadPost * call SetCursorPosition()
+function! SetCursorPosition()
+    if &filetype !~ 'commit\c'
+        if line("'\"") > 0 && line("'\"") <= line("$")
+            exe "normal! g`\""
+            normal! zz
+        endif
+    end
+endfunction
+
+" FuzzyFinder ignores.
+let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 
 " STATUS BAR CONFIG
-
 set laststatus=2
 set statusline=\ "
 set statusline+=%f\ " file name
@@ -96,127 +204,10 @@ set statusline+=%h%1*%m%r%w%0* " flag
 set statusline+=%= " right align
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
+" Don't flick cursor.
+set guicursor=a:blinkon0
 
-" NERDTree CONFIGURATION
+" Color scheme.
+colorscheme vividchalk
 
-" Enable nice colors
-let NERDChristmasTree = 1
-
-" Make it easy to see where we are
-let NERDTreeHighlightCursorline = 1
-
-" Make bookmarks visible
-let NERDTreeShowBookmarks = 1
-
-" Show hidden files
-let NERDTreeShowHidden = 1
-
-" Don't hijack NETRW
-let NERDTreeHijackNetrw = 0
-let NERDTreeIgnore=['\.$', '\~$']
-
-" Make F2 open NERDTree
-nmap <F2> :NERDTreeToggle<CR>
-
-
-" Search Config
-
-" show the `best match so far' as search strings are typed:
-set incsearch
-
-" assume the /g flag on :s substitutions to replace all matches in a line:
-set gdefault
-
-" <leader>f to startup an ack search
-map <leader>f :Ack<Space>
-
-
-" RUBY
-
-" Highlight ruby operators
-let ruby_operators = 1
-
-" Turn off rails bits of statusbar
-let g:rails_statusline=0
-
-" Clojure config
-
-" Enable gorilla for the lisp on the jvm
-let clj_want_gorilla = 0
-
-" Highlight built-in clojure functions
-let g:clj_highlight_builtins = 1
-
-" Also highlight contrib
-let g:clj_highlight_contrib = 1
-
-" Paren Rainbow (diff colors for diff nestings)
-let g:clj_paren_rainbow = 1
-
-" Auto added used namespaces, generally be awesome
-let g:clj_dynamic_highlighting = 1
-
-
-" NERDCommenter
-let NERDDefaultNesting = 0
-let NERDRemoveExtraSpaces = 1
-let NERDSpaceDelims = 1
-
-" NERDTree 
-
-" Enable nice colors
-let NERDChristmasTree = 1
-
-" Make it easy to see where we are
-let NERDTreeHighlightCursorline = 1
-
-" Make bookmarks visible
-let NERDTreeShowBookmarks = 1
-
-" Show hidden files
-let NERDTreeShowHidden = 1
-" Don't hijack NETRW
-let NERDTreeHijackNetrw = 0
-let NERDTreeIgnore=['\.$', '\~$']
-
-
-" RubyTest CONFIG
-let g:rubytest_cmd_spec = "ruby -Ilib -Ispec %p" 
-let g:rubytest_cmd_example = "ruby -Ilib -Ispec %p"
-let g:rubytest_cmd_feature = "cucumber %p" 
-let g:rubytest_cmd_story = "cucumber %p -n '%c'" 
-let g:rubytest_in_quickfix = 1 
-map <Leader>\ <Plug>RubyTestRun " change from <Leader>t to <Leader>\ 
-
-" COMMAND-T
-let g:CommandTNeverShowDotFiles = 1
-let g:CommandTMatchWindowAtTop = 1
-let g:CommandTMaxHeight = 15
-
-
-" AUTOCOMMANDS
-
-function! CustomClojureSettings()
-  set filetype=clojure
-endfunction
-
-" function! CustomJsonSettings()
-  " autocmd BufRead *.json set filetype=json
-  " au! Syntax json source ~/Downloads/json.vim
-  " autocmd FileType json set equalprg=json_reformat
-  " autocmd FileType json set makeprg=jsonval\ %
-  " autocmd FileType json set errorformat=%E%f:\ %m\ at\ line\ %l,%-G%.%#
-" endfunction
-
-function! CustomMarkdownSettings()
-  set filetype=mkd
-endfunction
-
-augroup SpicyAutoCommands
-  autocmd BufEnter,BufWritePost *.clj   call CustomClojureSettings()
-  autocmd BufEnter *.markdown call CustomMarkdownSettings()
-  " autocmd BufRead *.json call CustomJsonSettings()
-  " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-  " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-augroup END
+au BufNewFile,BufRead *.txt setfiletype txt
