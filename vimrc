@@ -208,6 +208,7 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 set guicursor=a:blinkon0
 
 " Color scheme.
-colorscheme vividchalk
+"colorscheme vividchalk
+colorscheme krunktastic " github256 
 
 au BufNewFile,BufRead *.txt setfiletype txt
