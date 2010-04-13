@@ -105,9 +105,6 @@ vnoremap < <gv
 let mapleader = ","
 map <silent> <leader>d :NERDTreeToggle<cr>
 map <silent> <leader>f :FuzzyFinderTextMate<CR>
-map <silent> <leader>t :TlistToggle<CR>
-map <silent> <leader>b :BufExplorerHorizontalSplit<CR>
-map <silent> <leader>bb :BufExplorerHorizontalSplit<CR>
 map <silent> <leader>k :bd<CR>
 nmap <silent> <Leader>cd :cd %:p:h<CR>
 
