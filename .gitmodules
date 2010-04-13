@@ -40,3 +40,9 @@
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
+[submodule "bundle/vim-txt"]
+	path = bundle/vim-txt
+	url = git://github.com/markabe/vim-txt.git
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = git://github.com/tpope/vim-endwise.git
