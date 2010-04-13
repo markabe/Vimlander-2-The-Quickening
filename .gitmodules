@@ -46,3 +46,9 @@
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = git://github.com/tpope/vim-endwise.git
+[submodule "bundle/vim-rubytest"]
+	path = bundle/vim-rubytest
+	url = git://github.com/reinh/vim-rubytest.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/markabe/snipmate.vim.git
