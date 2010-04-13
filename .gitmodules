@@ -52,3 +52,6 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = git://github.com/markabe/snipmate.vim.git
+[submodule "bundle/fuzzyfinder-textmate/plugin"]
+	path = bundle/fuzzyfinder-textmate/plugin
+	url = git://github.com/sethbc/fuzzyfinder_textmate.git
