@@ -1,8 +1,12 @@
 " Enable pathogen
 call pathogen#runtime_append_all_bundles()
 
-"Behave somewhat like windows app.
+" Behave somewhat like windows app.
 source $VIMRUNTIME/mswin.vim
+
+" Move swap files and backups out of work areas.
+set directory=~/.vim_tmp
+set backupdir=~/.vim_tmp
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
