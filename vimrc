@@ -219,7 +219,6 @@ function ToggleWrap()
   if &wrap
     echo "Wrap OFF"
     setlocal nowrap
-    set virtualedit=all
     silent! nunmap <buffer> <Up>
     silent! nunmap <buffer> <Down>
     silent! nunmap <buffer> <Home>
@@ -231,7 +230,6 @@ function ToggleWrap()
   else
     echo "Wrap ON"
     setlocal wrap linebreak nolist
-    set virtualedit=
     setlocal display+=lastline
     noremap  <buffer> <silent> <Up>   gk
     noremap  <buffer> <silent> <Down> gj
