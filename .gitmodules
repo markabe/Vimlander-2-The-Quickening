@@ -55,3 +55,6 @@
 [submodule "bundle/fuzzyfinder-textmate/plugin"]
 	path = bundle/fuzzyfinder-textmate/plugin
 	url = git://github.com/sethbc/fuzzyfinder_textmate.git
+[submodule "bundle/textile"]
+	path = bundle/textile
+	url = git://github.com/timcharper/textile.vim.git
