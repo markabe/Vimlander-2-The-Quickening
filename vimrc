@@ -1,24 +1,29 @@
-" Enable pathogen
+" Load plugins from .vim/bundle directory.
 call pathogen#runtime_append_all_bundles()
 
-" Behave somewhat like windows app.
+" Select all, cut/copy/paste, undo/redo, save.
 source $VIMRUNTIME/mswin.vim
+
+syntax on
+colorscheme vividchalk
+
+
+" ############################  Options  ############################
+
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
 " Move swap files and backups out of work areas.
 set directory=~/.vim_tmp
 set backupdir=~/.vim_tmp
 
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
-
-"allow backspacing over everything in insert mode
+" Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
-"arrow or motion over line breaks
+" Arrow or motion over line breaks.
 set whichwrap=<,>,h,l,[,] 
 
-"store lots of :cmdline history
+" Store lots of :cmdline history.
 set history=1000
 
 set showcmd     "show incomplete cmds down the bottom
@@ -28,20 +33,21 @@ set ignorecase  "case insensitive search
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 
-" assume the /g flag on :s substitutions to replace all matches in a line:
+" Assume the /g flag on :s substitutions to replace all matches in a line.
 set gdefault
 
 set nowrap      "dont wrap lines
 set linebreak   "wrap lines at convenient points
 set number      "line numbers
 
-"indent settings
+" Indent settings.
+filetype indent on
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
 
-"folding settings
+" Folding settings.
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
@@ -50,73 +56,42 @@ set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
-"display tabs and trailing spaces
+" Display tabs and trailing spaces.
 set list
 set listchars=tab:?·,trail:·,nbsp:·
 
 set formatoptions-=o "dont continue comments when pushing o/O
 
-"vertical/horizontal scroll off settings
+" Vertical/horizontal scroll off settings.
 set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
 
-"load ftplugins and indent files
-filetype plugin on
-filetype indent on
-
-"turn on syntax highlighting
-syntax on
-
-"some stuff to get the mouse going in term
+" Some stuff to get the mouse going in term.
 set mouse=a
 set ttymouse=xterm2
 
-"hide buffers when not displayed
+" Hide buffers when not displayed.
 set hidden
 
-"make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
+" Don't flick cursor.
+set guicursor=a:blinkon0
 
-"map to bufexplorer
-nnoremap <C-B> :BufExplorer<cr>
+" Status bar display.
+set laststatus=2
+set statusline=\ "
+set statusline+=%f\ " file name
+set statusline+=[
+set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+set statusline+=]
+set statusline+=%h%1*%m%r%w%0* " flag
+set statusline+=%= " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
-"new tab
-nnoremap <C-t> :tabnew<CR>
 
-"make Y consistent with C and D
-nnoremap Y y$
+" ############################  Spacial Navigation  ############################
 
-" Quick, jump out of insert mode while no one is looking
-imap ii <Esc>
-
-" Remap F1 from Help to ESC.  No more accidents
-nmap <F1> <Esc>
-map! <F1> <Esc>
-
-" Insert current date.
-iab <expr> ddate strftime("%m/%d/%Y")
-iab <expr> sdate strftime("*%m/%d/%Y*")
-iab d: Done: 
-iab s: Skip: 
-
-" Indent visual block
-" The tab version throws errors on startup
-vnoremap > >gv
-vnoremap < <gv
-
-let mapleader = ","
-map <silent> <leader>d :NERDTreeToggle<cr>
-map <silent> <leader>f :FuzzyFinderTextMate<CR>
-map <silent> <leader>k :bd<CR>
-nmap <silent> <Leader>cd :cd %:p:h<CR>
-
-" Switch to last buffer
-nnoremap <C-Tab> :b#<CR>
-inoremap <C-Tab> <Esc>:b#<CR>
-
-" Use motions to move between windows.
+" Use control + h,j,k,l to move between windows.
 nnoremap <C-h> <C-w><Left>
 inoremap <C-h> <Esc><C-w><Left>
 " <c-l> will also clear highlights.
@@ -127,6 +102,62 @@ nnoremap <C-k> <C-w><Up>
 nnoremap <C-j> <C-w><Down>
 inoremap <C-j> <Esc><C-w><Down>
 
+" Use shift + h,l to move between tabs.
+map L :tabn<CR>
+map H :tabp<CR>
+" Stop accidents.
+map K <Esc>
+" Alternte method using arrow keys.
+map <C-A-Right> :tabn<CR>
+vmap <C-A-Right> <Esc>:tabn<CR>
+imap <C-A-Right> <Esc>:tabn<CR>
+map <C-A-Left> :tabp<CR>
+vmap <C-A-Left> <Esc>:tabp<CR>
+imap <C-A-Left> <Esc>:tabp<CR>
+
+
+" ############################  Abbreviations  ############################
+
+" Insert current date.
+iab <expr> ddate strftime("%m/%d/%Y")
+iab <expr> sdate strftime("*%m/%d/%Y*")
+iab d: Done: 
+iab s: Skip: 
+
+
+" ############################  Leader Mappings  ############################
+
+let mapleader = ","
+
+" (d)irectory explorer.
+map <silent> <leader>d :NERDTreeToggle<cr>
+
+" (f)ile explorer.
+map <silent> <leader>f :FuzzyFinderTextMate<CR>
+
+" (c)hange (d)irectory to where file is.
+nmap <silent> <Leader>cd :cd %:p:h<CR>
+
+" (w)rap lines at word boundaries.
+noremap <silent> <Leader>w :call ToggleWrap()<CR>
+
+" (k)ill buffers without closing window or tab.
+map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
+map <silent> <leader>K :bd<CR>
+
+
+" ############################  Normal/General Mappings  ############################
+
+" New tab.
+nnoremap <C-t> :tabnew<CR>
+
+" Make Y consistent with C and D.
+nnoremap Y y$
+
+" Remap F1 from Help to ESC.  No more accidents.
+nmap <F1> <Esc>
+map! <F1> <Esc>
+
 " Scroll rather than the default PageUp and PageDown.
 nnoremap <silent> <PageUp> <C-U><C-U>
 vnoremap <silent> <PageUp> <C-U><C-U>
@@ -135,25 +166,21 @@ nnoremap <silent> <PageDown> <C-D><C-D>
 vnoremap <silent> <PageDown> <C-D><C-D>
 inoremap <silent> <PageDown> <C-\><C-O><C-D><C-\><C-O><C-D>
 
-" Switch between tabs left and right.
-map L :tabn<CR>
-map H :tabp<CR>
-" Stop accidents.
-map K <Esc>
-" Alternte method.
-map <C-A-Right> :tabn<CR>
-vmap <C-A-Right> <Esc>:tabn<CR>
-imap <C-A-Right> <Esc>:tabn<CR>
-map <C-A-Left> :tabp<CR>
-vmap <C-A-Left> <Esc>:tabp<CR>
-imap <C-A-Left> <Esc>:tabp<CR>
+" Switch to last buffer.
+nnoremap <C-Tab> :b#<CR>
+inoremap <C-Tab> <Esc>:b#<CR>
 
-"set diffexpr=MyDiff()
 " Expand or shrink window.
 if bufwinnr(1)
   map + <C-W>+
   map _ <C-W>-
 endif
+
+
+" ############################  Insert Mode Mappings  ############################
+
+" Quick, jump out of insert mode while no one is looking.
+imap ii <Esc>
 
 " Auto close braces.
 inoremap {      {}<Left>
@@ -169,52 +196,28 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 
-"visual search mappings
-function! s:VSetSearch()
-    let temp = @@
-    norm! gvy
-    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-    let @@ = temp
-endfunction
+
+" ############################  Visual Mode Mappings  ############################
+
+
+" Indent visual block.
+vnoremap > >gv
+vnoremap < <gv
+
+" Visual search mappings.
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
-"jump to last cursor position when opening a file
-"dont do it when writing a commit log entry
+
+" ############################  Auto Commands  ############################
+
+" Jump to last cursor position when opening a file.
+" Dont do it when writing a commit log entry.
 autocmd BufReadPost * call SetCursorPosition()
-function! SetCursorPosition()
-    if &filetype !~ 'commit\c'
-        if line("'\"") > 0 && line("'\"") <= line("$")
-            exe "normal! g`\""
-            normal! zz
-        endif
-    end
-endfunction
-
-" FuzzyFinder ignores.
-let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
-let g:fuzzy_matching_limit = 50
 
 
-" STATUS BAR CONFIG
-set laststatus=2
-set statusline=\ "
-set statusline+=%f\ " file name
-set statusline+=[
-set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-set statusline+=]
-set statusline+=%h%1*%m%r%w%0* " flag
-set statusline+=%= " right align
-set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+" ############################  Functions  ############################
 
-" Don't flick cursor.
-set guicursor=a:blinkon0
-
-" Color scheme.
-"colorscheme vividchalk
-colorscheme krunktastic " github256 
-
-noremap <silent> <Leader>w :call ToggleWrap()<CR>
 function ToggleWrap()
   if &wrap
     echo "Wrap OFF"
@@ -242,4 +245,46 @@ function ToggleWrap()
   endif
 endfunction
 
+function! CleanClose(tosave)
+  if (a:tosave == 1)
+      w!
+  endif
+  let todelbufNr = bufnr("%")
+  let newbufNr = bufnr("#")
+  if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+      exe "b".newbufNr
+  else
+      bnext
+  endif
+
+  if (bufnr("%") == todelbufNr)
+      new
+  endif
+  exe "bd".todelbufNr
+endfunction
+
+function! s:VSetSearch()
+    let temp = @@
+    norm! gvy
+    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    let @@ = temp
+endfunction
+
+function! SetCursorPosition()
+    if &filetype !~ 'commit\c'
+        if line("'\"") > 0 && line("'\"") <= line("$")
+            exe "normal! g`\""
+            normal! zz
+        endif
+    end
+endfunction
+
+
+" ############################  Plugin Customization  ############################
+
+" Map .txt extension to syntax definition.
 au BufNewFile,BufRead *.txt setfiletype txt
+
+" FuzzyFinder settins.
+let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
+let g:fuzzy_matching_limit = 50
