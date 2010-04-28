@@ -77,6 +77,9 @@ set hidden
 " Don't flick cursor.
 set guicursor=a:blinkon0
 
+" Set to auto read when a file is changed from the outside
+set autoread
+
 " Status bar display.
 set laststatus=2
 set statusline=\ "
@@ -285,6 +288,6 @@ endfunction
 " Map .txt extension to syntax definition.
 au BufNewFile,BufRead *.txt setfiletype txt
 
-" FuzzyFinder settins.
+" FuzzyFinder settings.
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
