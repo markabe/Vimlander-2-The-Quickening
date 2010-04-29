@@ -134,6 +134,7 @@ let mapleader = ","
 
 " (d)irectory explorer.
 map <silent> <leader>d :NERDTreeToggle<cr>
+map <silent> <leader>D :NERDTree %<cr>
 
 " (f)ile explorer.
 map <silent> <leader>f :FuzzyFinderTextMate<CR>
