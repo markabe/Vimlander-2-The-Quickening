@@ -234,6 +234,7 @@ function ToggleWrap()
     silent! iunmap <buffer> <Down>
     silent! iunmap <buffer> <Home>
     silent! iunmap <buffer> <End>
+    set whichwrap=<,>,h,l,[,]
   else
     echo "Wrap ON"
     setlocal wrap linebreak nolist
