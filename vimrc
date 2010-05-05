@@ -124,8 +124,9 @@ imap <C-A-Left> <Esc>:tabp<CR>
 " Insert current date.
 iab <expr> ddate strftime("%m/%d/%Y")
 iab <expr> sdate strftime("*%m/%d/%Y*")
-iab d: Done: 
-iab s: Skip: 
+" Mark as done/skip and move to bottom of block.
+iab d: Done: <Esc>dd}P{jj
+iab s: Skip: <Esc>dd}P{jj
 
 
 " ############################  Leader Mappings  ############################
