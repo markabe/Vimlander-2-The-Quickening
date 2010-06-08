@@ -61,3 +61,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = git://github.com/markabe/bufexplorer.git
+[submodule "bundle/spacial-v"]
+	path = bundle/spacial-v
+	url = git://github.com/markabe/spacial-v.git
