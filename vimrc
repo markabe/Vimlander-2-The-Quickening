@@ -128,7 +128,7 @@ map <silent> <leader>d :NERDTreeToggle<cr>
 map <silent> <leader>D :NERDTree %<cr>
 
 " (b)uffer exporer
-map <silent> <leader>b :FuzzyFinderBuffer<cr>
+map <silent> <leader>b :BufExplorer<cr>
 
 " (f)ile explorer.
 map <silent> <leader>f :FuzzyFinderTextMate<CR>
@@ -142,6 +142,9 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>
 " (k)ill buffers without closing window or tab.
 map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
 map <silent> <leader>K :bd<CR>
+
+" (z) shell in ConqueTerm.
+map <silent> <leader>z :ConqueTerm zsh<CR>
 
 
 " ############################  Normal/General Mappings  ############################
