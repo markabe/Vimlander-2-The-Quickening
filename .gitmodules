@@ -58,9 +58,9 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = git://github.com/markabe/bufexplorer.git
-[submodule "bundle/spacial-v"]
-	path = bundle/spacial-v
-	url = git://github.com/markabe/spacial-v.git
+[submodule "bundle/vim-spacial"]
+	path = bundle/vim-spacial
+	url = git://github.com/markabe/vim-spacial.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
