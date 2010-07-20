@@ -4,6 +4,8 @@ call pathogen#runtime_append_all_bundles()
 " Select all, cut/copy/paste, undo/redo, save.
 source $VIMRUNTIME/mswin.vim
 
+filetype plugin on
+
 syntax on
 colorscheme vividchalk
 
