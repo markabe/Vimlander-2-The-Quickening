@@ -293,3 +293,8 @@ au BufNewFile,BufRead *.txt setfiletype txt
 " FuzzyFinder settings.
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
+
+" Zencoding settings.
+let g:user_zen_settings = {
+\  'indentation' : '  '
+\}
