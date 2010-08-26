@@ -298,3 +298,7 @@ let g:fuzzy_matching_limit = 50
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
+
+" Switch to Ruby syntax.
+command Ruby set syntax=ruby
+command Erb set syntax=erb
