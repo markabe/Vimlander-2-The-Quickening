@@ -1,3 +1,5 @@
+colorscheme vividchalk
+
 " Scrollbar is always off.
 set guioptions-=rL
 

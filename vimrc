@@ -7,7 +7,7 @@ source $VIMRUNTIME/mswin.vim
 filetype plugin on
 
 syntax on
-colorscheme vividchalk
+colorscheme krunktastic
 
 
 " ############################  Options  ############################
