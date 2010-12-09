@@ -294,11 +294,15 @@ au BufNewFile,BufRead *.txt setfiletype txt
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
 
+" Taglist (o)utline.
+nnoremap <C-o> :TlistToggle<CR>
+
 " Zencoding settings.
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
 
-" Switch to Ruby syntax.
+" Switch to syntax.
 command Ruby set syntax=ruby
 command Erb set syntax=erb
+command Java set syntax=java
