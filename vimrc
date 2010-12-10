@@ -120,6 +120,9 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>
 map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
 map <silent> <leader>K :bd<CR>
 
+" (c)lose window.
+map <silent> <leader>c :close<CR>
+
 " (z) shell in ConqueTerm.
 map <silent> <leader>z :ConqueTerm zsh<CR>
 
@@ -301,6 +304,9 @@ nnoremap <C-o> :TlistToggle<CR>
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
+
+" Sc(r)atch window.
+map <silent> <leader>r :Sscratch<CR>
 
 " Switch to syntax.
 command Ruby set syntax=ruby
