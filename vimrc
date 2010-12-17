@@ -298,7 +298,7 @@ let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.
 let g:fuzzy_matching_limit = 50
 
 " Taglist (o)utline.
-nnoremap <C-o> :TlistToggle<CR>
+map <silent> <leader>o :TlistToggle<CR>
 
 " Zencoding settings.
 let g:user_zen_settings = {
