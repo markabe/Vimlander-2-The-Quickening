@@ -76,3 +76,9 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/mexpolk/vim-taglist.git
+[submodule "bundle/Command-T"]
+	path = bundle/Command-T
+	url = git://github.com/wincent/Command-T.git
+[submodule "bundle/vim-scratch"]
+	path = bundle/vim-scratch
+	url = git://github.com/duff/vim-scratch.git
