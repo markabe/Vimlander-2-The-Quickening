@@ -26,7 +26,7 @@ VIM was reborn like unto the noble phoenix.  And so it was as it always should b
 
     open .gitmodules and remove the reference to the to submodule
     open .git/config and remove the reference to the to submodule
-    git rm --cached modules/auth
+    git rm --cached bundle/vim-fugitive
 
 # Reminder to myself.
 It seems that a lot of people are dropping submodules but I've decided to hold onto them for now because I like to see what version I am at easier than having to drill down into the source of each bundle. Although the submoldules can be bit of a hassle, I think this cheat sheet should resolve much of it.
