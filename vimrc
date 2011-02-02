@@ -133,10 +133,6 @@ map <silent> <leader>z :ConqueTerm zsh<CR>
 " New tab.
 nnoremap <C-t> :tabnew<CR>
 
-" Write out.
-nnoremap <C-w> :w<CR>
-inoremap <C-w> <Esc>:w<CR>
-
 " Copy.
 nnoremap <C-c> "+y<CR>
 
