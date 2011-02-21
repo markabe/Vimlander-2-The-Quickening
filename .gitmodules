@@ -85,3 +85,6 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = https://github.com/bdd/vim-scala.git
+[submodule "bundle/Conque-Shell"]
+	path = bundle/Conque-Shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
