@@ -20,7 +20,7 @@ set backupdir=~/.vim_tmp
 set backspace=indent,eol,start
 
 " Arrow or motion over line breaks.
-set whichwrap=<,>,h,l,[,] 
+set whichwrap=<,>,h,l,[,]
 
 " Store lots of :cmdline history.
 set history=1000
@@ -133,8 +133,8 @@ map <silent> <leader>r :Sscratch<CR>
 " New tab.
 nnoremap <C-t> :tabnew<CR>
 
-" Copy.
-nnoremap <C-c> "+y<CR>
+" Copy to clipboard.
+vnoremap <C-C> "+y
 
 " Make Y consistent with C and D.
 nnoremap Y y$
@@ -266,30 +266,30 @@ function! SetCursorPosition()
 endfunction
 
 function! GuiTabLabel()
-	" add the tab number
-	let label = '['.tabpagenr()
- 
-	" modified since the last save?
-	let buflist = tabpagebuflist(v:lnum)
-	for bufnr in buflist
-		if getbufvar(bufnr, '&modified')
-			let label .= '*'
-			break
-		endif
-	endfor
- 
-	" count number of open windows in the tab
-	let wincount = tabpagewinnr(v:lnum, '$')
-	if wincount > 1
-		let label .= ', '.wincount
-	endif
-	let label .= '] '
- 
-	" add the file name without path information
-	let n = bufname(buflist[tabpagewinnr(v:lnum) - 1])
-	let label .= fnamemodify(n, ':t')
- 
-	return label
+  " add the tab number
+  let label = '['.tabpagenr()
+
+  " modified since the last save?
+  let buflist = tabpagebuflist(v:lnum)
+  for bufnr in buflist
+    if getbufvar(bufnr, '&modified')
+      let label .= '*'
+      break
+    endif
+  endfor
+
+  " count number of open windows in the tab
+  let wincount = tabpagewinnr(v:lnum, '$')
+  if wincount > 1
+    let label .= ', '.wincount
+  endif
+  let label .= '] '
+
+  " add the file name without path information
+  let n = bufname(buflist[tabpagewinnr(v:lnum) - 1])
+  let label .= fnamemodify(n, ':t')
+
+  return label
 endfunction
 
 " ############################  Plugin Customization  ############################
