@@ -1,15 +1,11 @@
 " Load plugins from .vim/bundle directory.
 call pathogen#runtime_append_all_bundles()
 
-" Select all, cut/copy/paste, undo/redo, save.
-source $VIMRUNTIME/mswin.vim
-
 filetype plugin on
 
 syntax on
 set t_Co=256
 colorscheme krunktastic
-
 
 " ############################  Options  ############################
 
@@ -126,6 +122,11 @@ map <silent> <leader>c :close<CR>
 " (z) shell in ConqueTerm.
 map <silent> <leader>z :ConqueTerm zsh<CR>
 
+" Taglist (o)utline.
+map <silent> <leader>o :TlistToggle<CR>
+
+" Sc(r)atch window.
+map <silent> <leader>r :Sscratch<CR>
 
 " ############################  Normal/General Mappings  ############################
 
@@ -300,16 +301,10 @@ au BufNewFile,BufRead *.txt setfiletype txt
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
 
-" Taglist (o)utline.
-map <silent> <leader>o :TlistToggle<CR>
-
 " Zencoding settings.
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
-
-" Sc(r)atch window.
-map <silent> <leader>r :Sscratch<CR>
 
 " Switch to syntax.
 command Ruby set syntax=ruby
