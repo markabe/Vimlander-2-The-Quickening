@@ -127,7 +127,7 @@ map <silent> <leader>z :ConqueTerm zsh<CR>
 map <silent> <leader>o :TlistToggle<CR>
 
 " Sc(r)atch window.
-map <silent> <leader>r :Sscratch<CR>
+map <silent> <leader>r :ScratchToggle<CR>
 
 " ############################  Normal/General Mappings  ############################
 
