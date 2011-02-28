@@ -1,5 +1,3 @@
-colorscheme vividchalk
-
 " Scrollbar is always off.
 set guioptions-=rL
 
@@ -20,5 +18,4 @@ endif
 
 if has("gui_win32") || has("gui_win32s")
   set guifont=Consolas:h13:b
-  "set enc=utf-8
 endif

@@ -2,15 +2,16 @@
 call pathogen#runtime_append_all_bundles()
 
 filetype plugin on
-
 syntax on
-set t_Co=256
-colorscheme krunktastic
+colorscheme vividchalk
 
 " ############################  Options  ############################
 
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" Use 256 colors.
+set t_Co=256
 
 " Move swap files and backups out of work areas.
 set directory=~/.vim_tmp
@@ -310,4 +311,6 @@ let g:user_zen_settings = {
 command Ruby set syntax=ruby
 command Erb set syntax=erb
 command Java set syntax=java
+
+" Downgrade from 256 colors.
 command Term set t_Co=16
