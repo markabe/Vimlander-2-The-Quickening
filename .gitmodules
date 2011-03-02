@@ -76,9 +76,6 @@
 [submodule "bundle/Command-T"]
 	path = bundle/Command-T
 	url = git://github.com/wincent/Command-T.git
-[submodule "bundle/vim-rubytest"]
-	path = bundle/vim-rubytest
-	url = git://github.com/markabe/vim-rubytest.git
 [submodule "bundle/vim-scratch"]
 	path = bundle/vim-scratch
 	url = git://github.com/markabe/vim-scratch.git
