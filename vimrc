@@ -117,6 +117,10 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>
 map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
 map <silent> <leader>K :bd<CR>
 
+" Run  Ruby (T)est or (A)ll tests in file.
+map <Leader>T <Plug>RubyTestRun
+map <Leader>A <Plug>RubyFileRun
+
 " (c)lose window.
 map <silent> <leader>c :close<CR>
 
