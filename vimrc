@@ -307,6 +307,9 @@ let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
 
+" Taglist mappings for vim-txt.
+let tlist_txt_settings = 'txt;s:section;f:file'
+
 " Switch to syntax.
 command Ruby set syntax=ruby
 command Erb set syntax=erb
