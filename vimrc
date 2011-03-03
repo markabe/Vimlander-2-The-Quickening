@@ -199,12 +199,25 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
+" ############################  Commands  ############################
+
+" Switch to syntax.
+command Ruby set syntax=ruby
+command Erb set syntax=erb
+command Java set syntax=java
+
+" Downgrade from 256 colors.
+command Term set t_Co=16
+
+
 " ############################  Auto Commands  ############################
 
 " Jump to last cursor position when opening a file.
 " Dont do it when writing a commit log entry.
 autocmd BufReadPost * call SetCursorPosition()
 
+" Map .txt extension to syntax definition.
+autocmd BufNewFile,BufRead *.txt setfiletype txt
 
 " ############################  Functions  ############################
 
@@ -299,28 +312,19 @@ endfunction
 
 " ############################  Plugin Customization  ############################
 
-" Map .txt extension to syntax definition.
-au BufNewFile,BufRead *.txt setfiletype txt
+" Command-T settings.
+let g:CommandTMatchWindowAtTop = 1
 
 " FuzzyFinder settings.
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
 
+" Taglist settings.
+let Tlist_Show_One_File = 1
+" Hook in txt type from vim-txt.
+let tlist_txt_settings = 'txt;s:section;f:file'
+
 " Zencoding settings.
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
-
-" Taglist settings.
-let Tlist_Show_One_File = 1
-
-" Taglist mappings for vim-txt.
-let tlist_txt_settings = 'txt;s:section;f:file'
-
-" Switch to syntax.
-command Ruby set syntax=ruby
-command Erb set syntax=erb
-command Java set syntax=java
-
-" Downgrade from 256 colors.
-command Term set t_Co=16
