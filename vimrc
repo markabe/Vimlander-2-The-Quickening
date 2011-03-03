@@ -311,6 +311,9 @@ let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
 
+" Taglist settings.
+let Tlist_Show_One_File = 1
+
 " Taglist mappings for vim-txt.
 let tlist_txt_settings = 'txt;s:section;f:file'
 
