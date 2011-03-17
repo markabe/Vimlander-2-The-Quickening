@@ -107,6 +107,9 @@ map <silent> <leader>b :BufExplorer<cr>
 " (f)ile explorer.
 map <silent> <leader>f :FuzzyFinderTextMate<CR>
 
+" (gr)rep for word under curser in pwd.
+map <silent> <leader>gr :Grep -r<CR><CR><CR>
+
 " (c)hange (d)irectory to where file is.
 nmap <silent> <Leader>cd :cd %:p:h<CR>
 
