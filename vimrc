@@ -116,6 +116,9 @@ nmap <silent> <Leader>cd :cd %:p:h<CR>
 " (w)rap lines at word boundaries.
 noremap <silent> <Leader>w :call ToggleWrap()<CR>
 
+" (a)uto (i)indent toggle.
+map <silent> <leader>ai :set autoindent!<cr>
+
 " (k)ill buffers without closing window or tab.
 map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
 map <silent> <leader>K :bd<CR>
