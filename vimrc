@@ -312,22 +312,3 @@ function! GuiTabLabel()
 
   return label
 endfunction
-
-" ############################  Plugin Customization  ############################
-
-" Command-T settings.
-let g:CommandTMatchWindowAtTop = 1
-
-" FuzzyFinder settings.
-let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
-let g:fuzzy_matching_limit = 50
-
-" Taglist settings.
-let Tlist_Show_One_File = 1
-" Hook in txt type from vim-txt.
-let tlist_txt_settings = 'txt;s:section;f:file'
-
-" Zencoding settings.
-let g:user_zen_settings = {
-\  'indentation' : '  '
-\}
