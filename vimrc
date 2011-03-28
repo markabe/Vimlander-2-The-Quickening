@@ -1,6 +1,3 @@
-" Load plugins from .vim/bundle directory.
-call pathogen#runtime_append_all_bundles()
-
 filetype plugin on
 syntax on
 colorscheme vividchalk
