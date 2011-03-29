@@ -1,4 +1,8 @@
 filetype plugin on
+
+" Bundle configuration.
+source ~/.vim/vundle.vim
+
 syntax on
 colorscheme vividchalk
 
