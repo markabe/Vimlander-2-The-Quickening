@@ -18,11 +18,13 @@ let g:CommandTMatchWindowAtTop = 1
 Bundle "git://github.com/vim-scripts/Conque-Shell.git"
 
 " FuzzyFinder settings.
-Bundle "git://github.com/sethbc/fuzzyfinder_textmate.git"
+Bundle "git://github.com/axold/fuzzyfinder_textmate.git"
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
 
 Bundle "git://github.com/motemen/git-vim.git"
+Bundle "git://github.com/vim-scripts/grep.vim.git"
+Bundle "git://github.com/henrik/vim-indexed-search.git"
 Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/scrooloose/nerdcommenter.git"
 Bundle "git://github.com/timcharper/textile.vim.git"
@@ -31,6 +33,7 @@ Bundle "git://github.com/tpope/vim-endwise.git"
 Bundle "git://github.com/tpope/vim-fugitive.git"
 Bundle "git://github.com/tpope/vim-git.git"
 Bundle "git://github.com/tpope/vim-markdown.git"
+Bundle "git://github.com/tsaleh/vim-matchit.git"
 Bundle "git://github.com/tpope/vim-ragtag.git"
 Bundle "git://github.com/tpope/vim-rails.git"
 Bundle "git://github.com/vim-ruby/vim-ruby.git"
