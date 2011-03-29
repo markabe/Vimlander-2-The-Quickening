@@ -24,14 +24,14 @@ let g:fuzzy_matching_limit = 50
 
 Bundle "git://github.com/motemen/git-vim.git"
 Bundle "git://github.com/vim-scripts/grep.vim.git"
-Bundle "git://github.com/henrik/vim-indexed-search.git"
-Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/scrooloose/nerdcommenter.git"
+Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/timcharper/textile.vim.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
 Bundle "git://github.com/tpope/vim-endwise.git"
 Bundle "git://github.com/tpope/vim-fugitive.git"
 Bundle "git://github.com/tpope/vim-git.git"
+Bundle "git://github.com/henrik/vim-indexed-search.git"
 Bundle "git://github.com/tpope/vim-markdown.git"
 Bundle "git://github.com/tsaleh/vim-matchit.git"
 Bundle "git://github.com/tpope/vim-ragtag.git"
@@ -52,7 +52,7 @@ Bundle "git://github.com/bronson/vim-trailing-whitespace.git"
 Bundle "git://github.com/tpope/vim-unimpaired.git"
 
 " Zencoding settings.
-Bundle "git://github.com/rafaelfranca/zencoding-vim.git"
+Bundle "git://github.com/mattn/zencoding-vim.git"
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
