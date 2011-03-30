@@ -173,17 +173,15 @@ if bufwinnr(1)
   map _ <C-W>-
 endif
 
+" Toggle to fix indenting while pasting.
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " ############################  Insert Mode Mappings  ############################
 
 " Quick, jump out of insert mode while no one is looking.
 imap ii <Esc>
-
-" Auto close braces.
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
 
 " Omni-completion.
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
