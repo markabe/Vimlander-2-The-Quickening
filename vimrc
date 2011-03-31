@@ -185,8 +185,7 @@ vnoremap <silent> <PageDown> <C-D><C-D>
 inoremap <silent> <PageDown> <C-\><C-O><C-D><C-\><C-O><C-D>
 
 " Switch to last buffer.
-nnoremap <C-Tab> :b#<CR>
-inoremap <C-Tab> <Esc>:b#<CR>
+map <silent> <leader><Tab> :b#<CR>
 
 " Expand or shrink window.
 if bufwinnr(1)
