@@ -140,6 +140,37 @@ map <silent> <leader>o :TlistToggle<CR>
 " Sc(r)atch window.
 map <silent> <leader>r :ScratchToggle<CR>
 
+" Easy(m*)otion.
+nnoremap <silent> <Leader>mf       :call EasyMotionF(0, 0)<CR>
+vnoremap <silent> <Leader>mf  :<C-U>call EasyMotionF(1, 0)<CR>
+
+nnoremap <silent> <Leader>mF       :call EasyMotionF(0, 1)<CR>
+vnoremap <silent> <Leader>mF  :<C-U>call EasyMotionF(1, 1)<CR>
+
+nnoremap <silent> <Leader>mt       :call EasyMotionT(0, 0)<CR>
+vnoremap <silent> <Leader>mt  :<C-U>call EasyMotionT(1, 0)<CR>
+
+nnoremap <silent> <Leader>mT       :call EasyMotionT(0, 1)<CR>
+vnoremap <silent> <Leader>mT  :<C-U>call EasyMotionT(1, 1)<CR>
+
+nnoremap <silent> <Leader>mw       :call EasyMotionWB(0, 0)<CR>
+vnoremap <silent> <Leader>mw  :<C-U>call EasyMotionWB(1, 0)<CR>
+
+nnoremap <silent> <Leader>mb       :call EasyMotionWB(0, 1)<CR>
+vnoremap <silent> <Leader>mb  :<C-U>call EasyMotionWB(1, 1)<CR>
+
+nnoremap <silent> <Leader>me       :call EasyMotionE(0, 0)<CR>
+vnoremap <silent> <Leader>me  :<C-U>call EasyMotionE(1, 0)<CR>
+
+nnoremap <silent> <Leader>mge      :call EasyMotionE(0, 1)<CR>
+vnoremap <silent> <Leader>mge :<C-U>call EasyMotionE(1, 1)<CR>
+
+nnoremap <silent> <Leader>mj       :call EasyMotionJK(0, 0)<CR>
+vnoremap <silent> <Leader>mj  :<C-U>call EasyMotionJK(1, 0)<CR>
+
+nnoremap <silent> <Leader>mk       :call EasyMotionJK(0, 1)<CR>
+vnoremap <silent> <Leader>mk  :<C-U>call EasyMotionJK(1, 1)<CR>
+
 " ############################  Normal/General Mappings  ############################
 
 " New tab.

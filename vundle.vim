@@ -28,6 +28,11 @@ Bundle "git://github.com/scrooloose/nerdcommenter.git"
 Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/timcharper/textile.vim.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
+
+" Vim-EasyMotion settings.
+Bundle "git://github.com/Lokaltog/vim-easymotion.git"
+let EasyMotion_do_mapping = 0
+
 Bundle "git://github.com/tpope/vim-endwise.git"
 Bundle "git://github.com/tpope/vim-fugitive.git"
 Bundle "git://github.com/tpope/vim-git.git"
