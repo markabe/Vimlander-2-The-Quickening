@@ -5,7 +5,7 @@ source ~/.vim/vundle.vim
 source ~/.vim/statusbar.vim
 
 syntax on
-colorscheme vividchalk
+colorscheme solarized
 
 " ############################  Options  ############################
 
