@@ -41,6 +41,7 @@ set gdefault
 set nowrap      "dont wrap lines
 set linebreak   "wrap lines at convenient points
 set number      "line numbers
+set ls=2        "always status bar
 
 " Indent settings.
 filetype indent on
