@@ -52,7 +52,7 @@ Bundle "git://github.com/tsaleh/vim-supertab.git"
 Bundle "git://github.com/tpope/vim-surround.git"
 
 " Taglist.
-Bundle "git://github.com/mexpolk/vim-taglist.git"
+Bundle "git://github.com/markabe/vim-taglist.git"
 let Tlist_Show_One_File = 1
 " Hook in txt type from vim-txt.
 let tlist_txt_settings = 'txt;s:section;f:file'
