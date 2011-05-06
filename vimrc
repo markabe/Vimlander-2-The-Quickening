@@ -6,6 +6,7 @@ source ~/.vim/statusbar.vim
 
 syntax on
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " ############################  Options  ############################
@@ -52,11 +53,11 @@ set expandtab
 set autoindent
 
 " Folding settings.
-set foldenable
-set foldmethod=syntax
-set foldlevel=1
-set foldnestmax=2
-set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\'.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+"set foldenable
+"set foldmethod=syntax
+"set foldlevel=1
+"set foldnestmax=2
+"set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\'.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
