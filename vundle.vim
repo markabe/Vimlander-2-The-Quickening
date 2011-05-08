@@ -65,3 +65,6 @@ Bundle "git://github.com/mattn/zencoding-vim.git"
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
+
+" ZoomWin.
+Bundle "git://github.com/vim-scripts/ZoomWin.git"
