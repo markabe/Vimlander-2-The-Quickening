@@ -46,23 +46,30 @@ in order to install/search [all available vim scripts]
     git clone http://github.com/gmarik/vundle.git ~/.vim/vundle.git
 
 2) Configure bundles:
-   Append to your `~/.vimrc`: >
 
-    set rtp+=~/.vim/vundle.git/ 
-    call vundle#rc()
+   Sample `.vimrc`: >
 
-    " Bundles:
-    Bundle "L9"
-    Bundle "FuzzyFinder"
-    Bundle "rails.vim"
-    Bundle "ack.vim"
-    Bundle "git://git.wincent.com/command-t.git"
-    " ...
+     set nocompatible               " be iMproved
+     filetype off                   " required!
 
-    " NOTE: if some plug-ins fail to work, put the config *between* lines:
-    " filetype off
-    " "Bundles here
-    " filetype plugin indent on 
+     set rtp+=~/.vim/vundle.git/ 
+     call vundle#rc()
+
+     " My Bundles here:
+     "
+     " original repos on github
+     Bundle 'tpope/vim-fugitive'
+     Bundle 'lokaltog/vim-easymotion'
+     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+     " vim-scripts repos
+     Bundle 'L9'
+     Bundle 'FuzzyFinder'
+     Bundle 'rails.vim'
+     " non github repos
+     Bundle 'git://git.wincent.com/command-t.git'
+     " ...
+
+     filetype plugin indent on     " required!
 
 3) Install configured bundles:
 
@@ -84,13 +91,15 @@ command in `.vimrc`: >
 or >
     Bundle 'script_name'        " 'script-name' should be an official script name (see |vundle-scripts-search| )
 
-Vundle loves Github, that's why short uris can be used to configure bundles: >
+Vundle loves Github, that's why short uris can be used with commands: >
 
     Bundle 'tpope/vim-fugitive'
 
 equals full uri >
 
     Bundle 'http://github.com/tpope/vim-fugitive.git'
+
+NOTE: Vundle defaults to http:// protocol for the short URIs
 
 
 4.2 INSTALL SCRIPTS ~
@@ -158,11 +167,11 @@ removes unused scripts with no questions.
 5. INTERACTIVE MODE ~
 
 Vundle provides simple interactive mode to help you explore new scripts easily.
-Interactive mode is available as result of :Bundles command. For instance running >
+Interactive mode is available as result of :Bundles command. For instance, running: >
 
     :Bundles! unite
 
-searches for scripts matching 'unite' string and yields a split window with
+triggers search for scripts matching 'unite' and yields a split window with
 content: >
 
     "Keymap: i - Install bundle; c - Cleanup; r - Refine list; R - Reload list
