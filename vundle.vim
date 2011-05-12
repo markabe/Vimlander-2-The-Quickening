@@ -30,6 +30,7 @@ Bundle "git://github.com/scrooloose/nerdcommenter.git"
 Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/scrooloose/syntastic.git"
 Bundle "git://github.com/timcharper/textile.vim.git"
+Bundle "git://github.com/kchmck/vim-coffee-script.git"
 Bundle "git://github.com/altercation/vim-colors-solarized.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
 
