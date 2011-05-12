@@ -135,6 +135,9 @@ map <silent> <leader>o :TlistToggle<CR>
 " Sc(r)atch window.
 map <silent> <leader>r :ScratchToggle<CR>
 
+" (C)offee(M)ake.
+map <silent> <leader>cm :CoffeeMake<CR>
+
 " Easy(m*)otion.
 nnoremap <silent> <Leader>mf       :call EasyMotionF(0, 0)<CR>
 vnoremap <silent> <Leader>mf  :<C-U>call EasyMotionF(1, 0)<CR>
