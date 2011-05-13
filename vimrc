@@ -252,6 +252,9 @@ autocmd BufReadPost * call SetCursorPosition()
 " Map .txt extension to syntax definition.
 autocmd BufNewFile,BufRead *.txt setfiletype txt
 
+" Map .coffee since plugin doesn't seem to get it done.
+autocmd BufNewFile,BufRead *.coffee setfiletype coffee
+
 " ############################  Functions  ############################
 
 function ToggleWrap()
