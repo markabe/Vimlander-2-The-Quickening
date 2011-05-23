@@ -109,6 +109,26 @@ map <silent> <leader>gr :Grep -r<CR><CR><CR>
 " (c)hange (d)irectory to where file is.
 nmap <silent> <Leader>cd :cd %:p:h<CR>
 
+" vim-fugitive mappings.
+nnoremap <Leader>gd :Gdiff<Enter>
+nnoremap <Leader>gs :Gstatus<Enter>
+nnoremap <Leader>gl :Glog<Enter>
+nnoremap <Leader>ga :Gwrite<Enter>
+nnoremap <Leader>gc :Gcommit<Enter>
+nnoremap <Leader>gb :Gblame<Enter>
+
+" vim-git (legacy) mappings.
+let g:git_no_map_default = 1
+nnoremap <Leader>gD :GitDiff --cached<Enter>
+nnoremap <Leader>gS :GitStatus<Enter>
+nnoremap <Leader>gL :GitLog<Enter>
+nnoremap <Leader>gA :GitAdd<Enter>
+nnoremap <Leader>gC :GitCommit<Enter>
+nnoremap <Leader>gP :GitPullRebase<Enter>
+
+" (g)it (c)ommit.
+nmap <silent> <Leader>gc :Gcommit<CR>
+
 " (w)rap lines at word boundaries.
 noremap <silent> <Leader>w :call ToggleWrap()<CR>
 
