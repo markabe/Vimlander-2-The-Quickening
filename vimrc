@@ -139,9 +139,10 @@ map <silent> <leader>ai :set autoindent!<cr>
 map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
 map <silent> <leader>K :bd<CR>
 
-" Run  Ruby (T)est or (A)ll tests in file.
+" Run  Ruby (T)est, (A)ll, (L)ast tests in file.
 map <Leader>T <Plug>RubyTestRun
 map <Leader>A <Plug>RubyFileRun
+map <unique> <Leader>L <Plug>RubyTestRunLast
 
 " (c)lose window.
 map <silent> <leader>c :close<CR>
@@ -171,11 +172,11 @@ vnoremap <silent> <Leader>mt  :<C-U>call EasyMotionT(1, 0)<CR>
 nnoremap <silent> <Leader>mT       :call EasyMotionT(0, 1)<CR>
 vnoremap <silent> <Leader>mT  :<C-U>call EasyMotionT(1, 1)<CR>
 
-nnoremap <silent> <Leader>mw       :call EasyMotionWB(0, 0)<CR>
-vnoremap <silent> <Leader>mw  :<C-U>call EasyMotionWB(1, 0)<CR>
+nnoremap <silent> <Leader>l       :call EasyMotionWB(0, 0)<CR>
+vnoremap <silent> <Leader>l  :<C-U>call EasyMotionWB(1, 0)<CR>
 
-nnoremap <silent> <Leader>mb       :call EasyMotionWB(0, 1)<CR>
-vnoremap <silent> <Leader>mb  :<C-U>call EasyMotionWB(1, 1)<CR>
+nnoremap <silent> <Leader>h       :call EasyMotionWB(0, 1)<CR>
+vnoremap <silent> <Leader>h  :<C-U>call EasyMotionWB(1, 1)<CR>
 
 nnoremap <silent> <Leader>me       :call EasyMotionE(0, 0)<CR>
 vnoremap <silent> <Leader>me  :<C-U>call EasyMotionE(1, 0)<CR>
