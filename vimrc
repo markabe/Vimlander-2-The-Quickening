@@ -276,6 +276,9 @@ autocmd BufNewFile,BufRead *.txt setfiletype txt
 " Map .coffee since plugin doesn't seem to get it done.
 autocmd BufNewFile,BufRead *.coffee setfiletype coffee
 
+" Make scratch buffer a txt file type.
+autocmd BufNewFile __Scratch__ setfiletype txt
+
 " ############################  Functions  ############################
 
 function ToggleWrap()
