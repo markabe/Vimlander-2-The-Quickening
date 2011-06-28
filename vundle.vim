@@ -2,69 +2,69 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " My Bundles:
-Bundle "git://github.com/markabe/bufexplorer.git"
-Bundle "git://github.com/markabe/snipmate.vim.git"
-Bundle "git://github.com/markabe/vim-scratch.git"
-Bundle "git://github.com/markabe/vim-spacial.git"
-Bundle "git://github.com/markabe/vim-txt.git"
+Bundle "markabe/bufexplorer"
+Bundle "markabe/snipmate.vim"
+Bundle "markabe/vim-scratch"
+Bundle "markabe/vim-spacial"
+Bundle "markabe/vim-txt"
 
 
 " Bundles:
-Bundle "git://github.com/mileszs/ack.vim.git"
+Bundle "mileszs/ack.vim"
 
 " Command-T.
-Bundle "git://github.com/wincent/Command-T.git"
+Bundle "wincent/Command-T"
 let g:CommandTMatchWindowAtTop = 1
 
-Bundle "git://github.com/vim-scripts/Conque-Shell.git"
-Bundle "git://github.com/tyru/current-func-info.vim.git"
+Bundle "vim-scripts/Conque-Shell"
+Bundle "tyru/current-func-info.vim"
 
 " FuzzyFinder.
-Bundle "git://github.com/axold/fuzzyfinder_textmate.git"
+Bundle "axold/fuzzyfinder_textmate"
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
 
-Bundle "git://github.com/motemen/git-vim.git"
-Bundle "git://github.com/vim-scripts/grep.vim.git"
-Bundle "git://github.com/scrooloose/nerdcommenter.git"
-Bundle "git://github.com/scrooloose/nerdtree.git"
-Bundle "git://github.com/scrooloose/syntastic.git"
-Bundle "git://github.com/timcharper/textile.vim.git"
-Bundle "git://github.com/kchmck/vim-coffee-script.git"
-Bundle "git://github.com/altercation/vim-colors-solarized.git"
-Bundle "git://github.com/tpope/vim-cucumber.git"
+Bundle "motemen-vim"
+Bundle "vim-scripts/grep.vim"
+Bundle "scrooloose/nerdcommenter"
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/syntastic"
+Bundle "timcharper/textile.vim"
+Bundle "kchmck/vim-coffee-script"
+Bundle "altercation/vim-colors-solarized"
+Bundle "tpope/vim-cucumber"
 
 " Vim-EasyMotion.
-Bundle "git://github.com/Lokaltog/vim-easymotion.git"
+Bundle "Lokaltog/vim-easymotion"
 let EasyMotion_do_mapping = 0
 
-Bundle "git://github.com/tpope/vim-endwise.git"
-Bundle "git://github.com/tpope/vim-fugitive.git"
-Bundle "git://github.com/tpope/vim-git.git"
-Bundle "git://github.com/henrik/vim-indexed-search.git"
-Bundle "git://github.com/tpope/vim-markdown.git"
-Bundle "git://github.com/tsaleh/vim-matchit.git"
-Bundle "git://github.com/tpope/vim-ragtag.git"
-Bundle "git://github.com/tpope/vim-rails.git"
-Bundle "git://github.com/vim-ruby/vim-ruby.git"
-Bundle "git://github.com/janx/vim-rubytest.git"
-Bundle "git://github.com/bdd/vim-scala.git"
-Bundle "git://github.com/tsaleh/vim-supertab.git"
-Bundle "git://github.com/tpope/vim-surround.git"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-five"
+Bundle "tpope/vim"
+Bundle "henrik/vim-indexed-search"
+Bundle "tpope/vim-markdown"
+Bundle "tsaleh/vim-matchit"
+Bundle "tpope/vim-ragtag"
+Bundle "tpope/vim-rails"
+Bundle "vim-ruby/vim-ruby"
+Bundle "janx/vim-rubytest"
+Bundle "bdd/vim-scala"
+Bundle "tsaleh/vim-supertab"
+Bundle "tpope/vim-surround"
 
 " Taglist.
-Bundle "git://github.com/markabe/vim-taglist.git"
+Bundle "markabe/vim-taglist"
 let Tlist_Show_One_File = 1
 " Hook in txt type from vim-txt.
 let tlist_txt_settings = 'txt;s:section;f:file'
 
-Bundle "git://github.com/bronson/vim-trailing-whitespace.git"
-Bundle "git://github.com/tpope/vim-unimpaired.git"
+Bundle "bronson/vim-trailing-whitespace"
+Bundle "tpope/vim-unimpaired"
 
 " Zencoding.
-Bundle "git://github.com/mattn/zencoding-vim.git"
+Bundle "mattn/zencoding-vim"
 let g:user_zen_settings = {
 \  'indentation' : '  '
 \}
 
-Bundle "git://github.com/vim-scripts/ZoomWin.git"
+Bundle "vim-scripts/ZoomWin"
