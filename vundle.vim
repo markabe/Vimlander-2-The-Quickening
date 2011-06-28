@@ -40,7 +40,8 @@ let EasyMotion_do_mapping = 0
 
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-five"
-Bundle "tpope/vim"
+Bundle "tpope/vim-five"
+Bundle "tpope/vim-fugitive"
 Bundle "henrik/vim-indexed-search"
 Bundle "tpope/vim-markdown"
 Bundle "tsaleh/vim-matchit"
