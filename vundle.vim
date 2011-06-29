@@ -24,7 +24,7 @@ Bundle "axold/fuzzyfinder_textmate"
 let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
 let g:fuzzy_matching_limit = 50
 
-Bundle "motemen-vim"
+Bundle "motemen/git-vim"
 Bundle "vim-scripts/grep.vim"
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
@@ -39,9 +39,8 @@ Bundle "Lokaltog/vim-easymotion"
 let EasyMotion_do_mapping = 0
 
 Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-five"
-Bundle "tpope/vim-five"
 Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-git"
 Bundle "henrik/vim-indexed-search"
 Bundle "tpope/vim-markdown"
 Bundle "tsaleh/vim-matchit"
