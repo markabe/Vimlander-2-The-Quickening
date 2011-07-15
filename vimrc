@@ -5,9 +5,9 @@ source ~/.vim/vundle.vim
 source ~/.vim/statusbar.vim
 
 syntax on
-set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+set background=dark
 
 " ############################  Options  ############################
 
