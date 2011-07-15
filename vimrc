@@ -6,8 +6,8 @@ source ~/.vim/statusbar.vim
 
 syntax on
 let g:solarized_termcolors=256
-colorscheme solarized
 set background=dark
+colorscheme solarized
 
 " ############################  Options  ############################
 
