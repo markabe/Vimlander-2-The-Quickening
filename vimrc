@@ -138,7 +138,7 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>
 map <silent> <leader>ai :set autoindent!<cr>
 
 " (k)ill buffers without closing window or tab.
-map <silent> <leader>k :call CleanClose(0)<CR>:enew<CR>
+map <silent> <leader>k :call CleanClose(0)<CR>
 map <silent> <leader>K :bd<CR>
 
 " Run  Ruby (T)est, (A)ll, (L)ast tests in file.
@@ -317,6 +317,10 @@ function! CleanClose(tosave)
   endif
   let todelbufNr = bufnr("%")
   let newbufNr = bufnr("#")
+  if (getbufvar(bufnr('%'), '&modified'))
+    echomsg ('No write since last change for buffer ')
+    return
+  endif
   if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
       exe "b".newbufNr
   else
@@ -327,6 +331,7 @@ function! CleanClose(tosave)
       new
   endif
   exe "bd".todelbufNr
+  enew
 endfunction
 
 function! s:VSetSearch()
