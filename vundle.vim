@@ -2,11 +2,11 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " My Bundles:
-Bundle "markabe/bufexplorer"
-Bundle "markabe/snipmate.vim"
-Bundle "markabe/vim-scratch"
-Bundle "markabe/vim-spacial"
-Bundle "markabe/vim-txt"
+Bundle "git@github.com:markabe/bufexplorer.git"
+Bundle "git@github.com:markabe/snipmate.vim.git"
+Bundle "git@github.com:markabe/vim-scratch.git"
+Bundle "git@github.com:markabe/vim-spacial.git"
+Bundle "git@github.com:markabe/vim-txt.git"
 
 
 " Bundles:
