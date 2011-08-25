@@ -18,8 +18,8 @@ filetype plugin on
   set t_Co=256
 
   " Move swap files and backups out of work areas.
-  set directory=~/.vim_tmp
-  set backupdir=~/.vim_tmp
+  set directory=~/.vim/tmp
+  set backupdir=~/.vim/tmp
 
   " Allow backspacing over everything in insert mode.
   set backspace=indent,eol,start
