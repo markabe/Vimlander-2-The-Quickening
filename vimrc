@@ -161,6 +161,9 @@ filetype plugin on
   " (C)offee(M)ake.
   map <silent> <leader>cm :CoffeeMake<CR>
 
+  " (C)ommand to (F)ix (W)hitespace.
+  map <silent> <leader>cfw :FixWhitespace<CR>
+
   " Easy(m*)otion.
   nnoremap <silent> <Leader>mf       :call EasyMotionF(0, 0)<CR>
   vnoremap <silent> <Leader>mf  :<C-U>call EasyMotionF(1, 0)<CR>

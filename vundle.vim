@@ -48,7 +48,7 @@ Bundle "markabe/vim-taglist"
   let Tlist_Show_One_File = 1
   " Hook in txt type from vim-txt.
   let tlist_txt_settings = 'txt;s:section;f:file'
-Bundle "bronson/vim-trailing-whitespace"
+Bundle "SjB/vim-trailing-whitespace.git"
 Bundle "tpope/vim-unimpaired"
 Bundle "mattn/zencoding-vim"
   let g:user_zen_settings = {
