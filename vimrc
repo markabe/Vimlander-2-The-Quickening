@@ -316,6 +316,7 @@ filetype plugin on
       inoremap <buffer> <silent> <Down> <C-o>gj
       inoremap <buffer> <silent> <Home> <C-o>g<Home>
       inoremap <buffer> <silent> <End>  <C-o>g<End>
+      set listchars=
     endif
   endfunction
 
