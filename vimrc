@@ -131,8 +131,11 @@ filetype plugin on
   " (g)it (c)ommit.
   nmap <silent> <Leader>gc :Gcommit<CR>
 
-  " (w)rap lines at word boundaries.
-  noremap <silent> <Leader>w :call ToggleWrap()<CR>
+  " (w)ord (w)rap lines at word boundaries.
+  noremap <silent> <Leader>ww :call ToggleWrap()<CR>
+
+  " (w)hite (s)pace highlighting.
+  noremap <silent> <Leader>ws :call ToggleWhitespace()<CR>
 
   " (a)uto (i)indent toggle.
   map <silent> <leader>ai :set autoindent!<cr>
@@ -316,6 +319,16 @@ filetype plugin on
       inoremap <buffer> <silent> <Down> <C-o>gj
       inoremap <buffer> <silent> <Home> <C-o>g<Home>
       inoremap <buffer> <silent> <End>  <C-o>g<End>
+    endif
+  endfunction
+
+  function ToggleWhitespace()
+    if &list
+      set nolist
+      set listchars=
+    else
+      set list
+      set listchars=tab:?·,trail:·,nbsp:·
     endif
   endfunction
 
