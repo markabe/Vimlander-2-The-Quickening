@@ -54,4 +54,4 @@ Bundle "mattn/zencoding-vim"
   let g:user_zen_settings = {
   \  'indentation' : '  '
   \}
-Bundle "vim-scripts/ZoomWin"
+Bundle "blueyed/ZoomWin"
