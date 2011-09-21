@@ -309,7 +309,7 @@ filetype plugin on
       set whichwrap=<,>,h,l,[,]
     else
       echo "Wrap ON"
-      setlocal wrap linebreak nolist
+      setlocal wrap linebreak
       setlocal display+=lastline
       noremap  <buffer> <silent> <Up>   gk
       noremap  <buffer> <silent> <Down> gj
@@ -319,7 +319,6 @@ filetype plugin on
       inoremap <buffer> <silent> <Down> <C-o>gj
       inoremap <buffer> <silent> <Home> <C-o>g<Home>
       inoremap <buffer> <silent> <End>  <C-o>g<End>
-      set listchars=
     endif
   endfunction
 
