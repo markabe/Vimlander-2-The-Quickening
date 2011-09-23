@@ -297,7 +297,8 @@ filetype plugin on
   function ToggleWrap()
     if &wrap
       echo "Wrap OFF"
-      setlocal nowrap
+      setlocal nowrap nolinebreak
+      setlocal whichwrap=<,>,h,l,[,]
       silent! nunmap <buffer> <Up>
       silent! nunmap <buffer> <Down>
       silent! nunmap <buffer> <Home>
