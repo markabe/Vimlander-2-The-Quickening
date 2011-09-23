@@ -137,6 +137,9 @@ filetype plugin on
   " (w)hite (s)pace highlighting.
   noremap <silent> <Leader>ws :call ToggleWhitespace()<CR>
 
+  " (W)hitespace (F)ix.
+  map <silent> <leader>wf :FixWhitespace<CR>
+
   " (a)uto (i)indent toggle.
   map <silent> <leader>ai :set autoindent!<cr>
 
@@ -163,9 +166,6 @@ filetype plugin on
 
   " (C)offee(M)ake.
   map <silent> <leader>cm :CoffeeMake<CR>
-
-  " (C)ommand to (F)ix (W)hitespace.
-  map <silent> <leader>cfw :FixWhitespace<CR>
 
   " Easy(m*)otion.
   nnoremap <silent> <Leader>mf       :call EasyMotionF(0, 0)<CR>
