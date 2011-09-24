@@ -1,10 +1,13 @@
 filetype plugin on
 
 " Bundle Configuration:
+
   source ~/.vim/vundle.vim
-  source ~/.vim/statusbar.vim
+
+" Colors:
 
   syntax on
+  source ~/.vim/statusbar.vim
   let g:solarized_termcolors=256
   set background=dark
   colorscheme solarized
@@ -54,12 +57,12 @@ filetype plugin on
   set autoindent
   set shiftround
 
-  " Folding settings.
-  "set foldenable
-  "set foldmethod=syntax
-  "set foldlevel=1
-  "set foldnestmax=2
-  "set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\'.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+  " Folding capable, but off by default.
+  set nofoldenable
+  set foldmethod=syntax
+  set foldlevel=6
+  set foldnestmax=6
+  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\'.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 
   set wildmode=list:longest   "make cmdline tab completion similar to bash
   set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -111,6 +114,12 @@ filetype plugin on
   " (c)hange (d)irectory to where file is.
   nmap <silent> <Leader>cd :cd %:p:h<CR>
 
+  " Copy to clipboard.
+  vnoremap <Leader>y "+y
+
+  " Switch to last buffer.
+  map <silent> <leader><Tab> :b#<CR>
+
   " vim-fugitive mappings.
   nnoremap <Leader>gd :Gdiff<Enter>
   nnoremap <Leader>gs :Gstatus<Enter>
@@ -128,16 +137,13 @@ filetype plugin on
   nnoremap <Leader>gC :GitCommit<Enter>
   nnoremap <Leader>gP :GitPullRebase<Enter>
 
-  " (g)it (c)ommit.
-  nmap <silent> <Leader>gc :Gcommit<CR>
-
   " (w)ord (w)rap lines at word boundaries.
   noremap <silent> <Leader>ww :call ToggleWrap()<CR>
 
   " (w)hite (s)pace highlighting.
   noremap <silent> <Leader>ws :call ToggleWhitespace()<CR>
 
-  " (W)hitespace (F)ix.
+  " (w)hitespace (f)ix.
   map <silent> <leader>wf :FixWhitespace<CR>
 
   " (a)uto (i)indent toggle.
@@ -152,9 +158,6 @@ filetype plugin on
   map <Leader>A <Plug>RubyFileRun
   map <unique> <Leader>L <Plug>RubyTestRunLast
 
-  " (c)lose window.
-  map <silent> <leader>c :close<CR>
-
   " (z) shell in ConqueTerm.
   map <silent> <leader>z :ConqueTerm zsh<CR>
 
@@ -168,43 +171,16 @@ filetype plugin on
   map <silent> <leader>cm :CoffeeMake<CR>
 
   " Easy(m*)otion.
-  nnoremap <silent> <Leader>mf       :call EasyMotionF(0, 0)<CR>
-  vnoremap <silent> <Leader>mf  :<C-U>call EasyMotionF(1, 0)<CR>
-
-  nnoremap <silent> <Leader>mF       :call EasyMotionF(0, 1)<CR>
-  vnoremap <silent> <Leader>mF  :<C-U>call EasyMotionF(1, 1)<CR>
-
-  nnoremap <silent> <Leader>mt       :call EasyMotionT(0, 0)<CR>
-  vnoremap <silent> <Leader>mt  :<C-U>call EasyMotionT(1, 0)<CR>
-
-  nnoremap <silent> <Leader>mT       :call EasyMotionT(0, 1)<CR>
-  vnoremap <silent> <Leader>mT  :<C-U>call EasyMotionT(1, 1)<CR>
-
   nnoremap <silent> <Leader>l       :call EasyMotionWB(0, 0)<CR>
   vnoremap <silent> <Leader>l  :<C-U>call EasyMotionWB(1, 0)<CR>
 
   nnoremap <silent> <Leader>h       :call EasyMotionWB(0, 1)<CR>
   vnoremap <silent> <Leader>h  :<C-U>call EasyMotionWB(1, 1)<CR>
 
-  nnoremap <silent> <Leader>me       :call EasyMotionE(0, 0)<CR>
-  vnoremap <silent> <Leader>me  :<C-U>call EasyMotionE(1, 0)<CR>
-
-  nnoremap <silent> <Leader>mge      :call EasyMotionE(0, 1)<CR>
-  vnoremap <silent> <Leader>mge :<C-U>call EasyMotionE(1, 1)<CR>
-
-  nnoremap <silent> <Leader>mj       :call EasyMotionJK(0, 0)<CR>
-  vnoremap <silent> <Leader>mj  :<C-U>call EasyMotionJK(1, 0)<CR>
-
-  nnoremap <silent> <Leader>mk       :call EasyMotionJK(0, 1)<CR>
-  vnoremap <silent> <Leader>mk  :<C-U>call EasyMotionJK(1, 1)<CR>
-
 " Normal And General Mappings:
 
   " New tab.
   nnoremap <C-t> :tabnew<CR>
-
-  " Copy to clipboard.
-  vnoremap <C-C> "+y
 
   " Make Y consistent with C and D.
   nnoremap Y y$
@@ -222,15 +198,12 @@ filetype plugin on
   inoremap <silent> <PageDown> <C-\><C-O><C-D><C-\><C-O><C-D>
 
   " Following mapping is a replacement for <C-]>:
-  noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
+  "noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
   " Following mapping is a replacement for <C-]>:
-  nnoremap <silent> <C-]> :FufBufferTagWithCursorWord!<CR>
-  vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
-  nnoremap <silent> <C-]> :FufBufferTagAllWithCursorWord!<CR>
-  vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
-
-  " Switch to last buffer.
-  map <silent> <leader><Tab> :b#<CR>
+  "nnoremap <silent> <C-]> :FufBufferTagWithCursorWord!<CR>
+  "vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
+  "nnoremap <silent> <C-]> :FufBufferTagAllWithCursorWord!<CR>
+  "vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
 
   " Expand or shrink window.
   if bufwinnr(1)
@@ -241,20 +214,11 @@ filetype plugin on
   " Toggle to fix indenting while pasting.
   nnoremap <F2> :set invpaste paste?<CR>
   set pastetoggle=<F2>
-  set showmode
 
 " Insert Mode Mappings:
 
   " Quick, jump out of insert mode while no one is looking.
   imap ii <Esc>
-
-  " Omni-completion.
-  inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-  \ "\<lt>C-n>" :
-  \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-  \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-  \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-  imap <C-@> <C-Space>
 
 " Visual Mode Mappings:
 
@@ -266,16 +230,12 @@ filetype plugin on
   vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
   vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
-
 " Commands:
 
   " Switch to syntax.
   command Ruby set syntax=ruby
   command Erb set syntax=erb
   command Java set syntax=java
-
-  " Downgrade from 256 colors.
-  command Term set t_Co=16
 
 " Auto Commands:
 
