@@ -114,9 +114,6 @@ filetype plugin on
   " (c)hange (d)irectory to where file is.
   nmap <silent> <Leader>cd :cd %:p:h<CR>
 
-  " Copy to clipboard.
-  vnoremap <Leader>y "+y
-
   " Switch to last buffer.
   map <silent> <leader><Tab> :b#<CR>
 
@@ -178,6 +175,9 @@ filetype plugin on
   vnoremap <silent> <Leader>h  :<C-U>call EasyMotionWB(1, 1)<CR>
 
 " Normal And General Mappings:
+
+  " Yank to clipboard.
+  vnoremap y "+y
 
   " New tab.
   nnoremap <C-t> :tabnew<CR>
