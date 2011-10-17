@@ -179,11 +179,14 @@ filetype plugin on
   " Yank to clipboard.
   vnoremap y "+y
 
+  " Make Y consistent with C and D and go to clipboard.
+  nnoremap Y "+y$
+
+  " Yank to clipboard.
+  nnoremap yy "+yy
+
   " New tab.
   nnoremap <C-t> :tabnew<CR>
-
-  " Make Y consistent with C and D.
-  nnoremap Y y$
 
   " Remap F1 from Help to ESC.  No more accidents.
   nmap <F1> <Esc>
