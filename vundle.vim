@@ -50,6 +50,7 @@ Bundle "markabe/vim-taglist"
   let tlist_txt_settings = 'txt;s:section;f:file'
 Bundle "SjB/vim-trailing-whitespace.git"
 Bundle "tpope/vim-unimpaired"
+Bundle "mikewest/vimroom.git"
 Bundle "mattn/zencoding-vim"
   let g:user_zen_settings = {
   \  'indentation' : '  '
