@@ -239,6 +239,7 @@ filetype plugin on
   command Ruby set syntax=ruby
   command Erb set syntax=erb
   command Java set syntax=java
+  command Term set t_Co=16
 
 " Auto Commands:
 
