@@ -167,13 +167,6 @@ filetype plugin on
   " (C)offee(M)ake.
   map <silent> <leader>cm :CoffeeMake<CR>
 
-  " Easy(m*)otion.
-  nnoremap <silent> <Leader>l       :call EasyMotionWB(0, 0)<CR>
-  vnoremap <silent> <Leader>l  :<C-U>call EasyMotionWB(1, 0)<CR>
-
-  nnoremap <silent> <Leader>h       :call EasyMotionWB(0, 1)<CR>
-  vnoremap <silent> <Leader>h  :<C-U>call EasyMotionWB(1, 1)<CR>
-
 " Normal And General Mappings:
 
   " Yank to clipboard.

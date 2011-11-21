@@ -29,8 +29,6 @@ Bundle "timcharper/textile.vim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "altercation/vim-colors-solarized"
 Bundle "tpope/vim-cucumber"
-Bundle "Lokaltog/vim-easymotion"
-  let EasyMotion_do_mapping = 0
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
