@@ -102,8 +102,11 @@ filetype plugin on
   map <silent> <leader>d :NERDTreeToggle<cr>
   map <silent> <leader>D :NERDTree %<cr>
 
-  " (b)uffer exporer
+  " (b)uffer exporer.
   map <silent> <leader>b :BufExplorer<cr>
+
+  " (p)aste mode toggle.
+  map <silent> <leader>p :set invpaste paste?<CR>
 
   " (f)ile explorer.
   map <silent> <leader>f :FuzzyFinderTextMate<CR>
