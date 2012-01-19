@@ -249,6 +249,9 @@ filetype plugin on
   " Map .coffee since plugin doesn't seem to get it done.
   autocmd BufNewFile,BufRead *.coffee setfiletype coffee
 
+  " Map .scala since plugin doesn't seem to get it done.
+  autocmd BufNewFile,BufRead *.scala setfiletype scala
+
   " Make scratch buffer a txt file type.
   autocmd BufNewFile __Scratch__ setfiletype txt
 
