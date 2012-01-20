@@ -14,6 +14,7 @@ Bundle "wincent/Command-T"
   let g:CommandTMatchWindowAtTop = 1
 Bundle "vim-scripts/Conque-Shell"
 Bundle "tyru/current-func-info.vim"
+Bundle "vim-scripts/dbext.vim"
 Bundle "vim-scripts/FuzzyFinder"
   let g:fuf_buffertag_ctagsPath='/usr/local/bin/ctags'
 Bundle "axold/fuzzyfinder_textmate"
