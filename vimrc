@@ -179,44 +179,26 @@ filetype plugin on
   " Yank to clipboard.
   vnoremap y "+y
 
-  " Make Y consistent with C and D and go to clipboard.
-  nnoremap Y "+y$
-
   " Yank to clipboard.
   nnoremap yy "+yy
 
+  " Make Y consistent with C and D and go to clipboard.
+  nnoremap Y "+y$
+
   " New tab.
-  nnoremap <C-t> :tabnew<CR>
+  map <C-t> :tabnew<CR>
+
+  " Turn off search highlighting with enter key.
+  nnoremap <CR> :nohls<CR><CR>
 
   " Remap F1 from Help to ESC.  No more accidents.
-  nmap <F1> <Esc>
   map! <F1> <Esc>
-
-  " Scroll rather than the default PageUp and PageDown.
-  nnoremap <silent> <PageUp> <C-U><C-U>
-  vnoremap <silent> <PageUp> <C-U><C-U>
-  inoremap <silent> <PageUp> <C-\><C-O><C-U><C-\><C-O><C-U>
-  nnoremap <silent> <PageDown> <C-D><C-D>
-  vnoremap <silent> <PageDown> <C-D><C-D>
-  inoremap <silent> <PageDown> <C-\><C-O><C-D><C-\><C-O><C-D>
-
-  " Following mapping is a replacement for <C-]>:
-  "noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
-  " Following mapping is a replacement for <C-]>:
-  "nnoremap <silent> <C-]> :FufBufferTagWithCursorWord!<CR>
-  "vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
-  "nnoremap <silent> <C-]> :FufBufferTagAllWithCursorWord!<CR>
-  "vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
 
   " Expand or shrink window.
   if bufwinnr(1)
     map + <C-W>+
     map _ <C-W>-
   endif
-
-  " Toggle to fix indenting while pasting.
-  nnoremap <F2> :set invpaste paste?<CR>
-  set pastetoggle=<F2>
 
 " Insert Mode Mappings:
 
