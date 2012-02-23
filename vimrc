@@ -171,8 +171,8 @@ filetype plugin on
   " Sc(r)atch window.
   map <silent> <leader>r :ScratchToggle<CR>
 
-  " (C)offee(M)ake.
-  map <silent> <leader>cm :CoffeeMake<CR>
+  " (M)ake(C)offee.
+  map <silent> <leader>mc :CoffeeMake<CR>
 
 " Normal And General Mappings:
 
