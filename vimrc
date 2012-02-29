@@ -86,6 +86,9 @@ filetype plugin on
   " Some stuff to get the mouse going in term.
   set ttymouse=xterm2
 
+  " Let mouse set cursor position.
+  set mouse=a
+
   " Hide buffers when not displayed.
   set hidden
 
