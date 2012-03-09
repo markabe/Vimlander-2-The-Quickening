@@ -156,6 +156,9 @@ filetype plugin on
   " (a)uto (i)indent toggle.
   map <silent> <leader>ai :set autoindent!<cr>
 
+  "(j)ira (o)pen"
+  map <silent> <leader>jo viw2e:<C-U>call JiraOpen()<cr>
+
   " (k)ill buffers without closing window or tab.
   map <silent> <leader>k :call CleanClose(0)<CR>
   map <silent> <leader>K :bd<CR>
@@ -350,3 +353,18 @@ filetype plugin on
 
     return label
   endfunction
+
+  function! s:get_visual_selection()
+    let [lnum1, col1] = getpos("'<")[1:2]
+    let [lnum2, col2] = getpos("'>")[1:2]
+    let lines = getline(lnum1, lnum2)
+    let lines[-1] = lines[-1][: col2 - 1]
+    let lines[0] = lines[0][col1 - 1:]
+    return join(lines, "\n")
+  endfunction
+
+  function! JiraOpen()
+    let key = s:get_visual_selection()
+    let cmd = ':!open ' . g:jira_browse_url . key
+    execute cmd
+  endfun
