@@ -157,7 +157,7 @@ filetype plugin on
   map <silent> <leader>ai :set autoindent!<cr>
 
   "(j)ira (o)pen"
-  map <silent> <leader>jo viw2e:<C-U>call JiraOpen()<cr>
+  map <silent> <leader>jo viw2e:<C-U>call JiraOpen()<cr><cr>
 
   " (k)ill buffers without closing window or tab.
   map <silent> <leader>k :call CleanClose(0)<CR>
