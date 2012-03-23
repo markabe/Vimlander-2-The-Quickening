@@ -211,6 +211,9 @@ filetype plugin on
   " Quick, jump out of insert mode while no one is looking.
   imap ii <Esc>
 
+  " The dash is too far away.
+  imap uu -
+
 " Visual Mode Mappings:
 
   " Indent visual block.
