@@ -3,7 +3,6 @@ filetype plugin on
 " Bundle Configuration:
 
   source ~/.vim/vundle.vim
-  source ~/.vim/vundle.vim
   if filereadable(expand("~/.vim/custom_vimrc"))
     source ~/.vim/custom_vimrc
   endif
