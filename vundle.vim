@@ -13,6 +13,7 @@ Bundle "mileszs/ack.vim"
 Bundle "wincent/Command-T"
   let g:CommandTMatchWindowAtTop = 1
 Bundle "vim-scripts/Conque-Shell"
+Bundle "kien/ctrlp.vim"
 Bundle "tyru/current-func-info.vim"
 Bundle "vim-scripts/dbext.vim"
 Bundle "vim-scripts/FuzzyFinder"
