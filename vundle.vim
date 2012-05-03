@@ -10,8 +10,6 @@ Bundle "git@github.com:markabe/vim-txt.git"
 
 " Bundles:
 Bundle "mileszs/ack.vim"
-Bundle "wincent/Command-T"
-  let g:CommandTMatchWindowAtTop = 1
 Bundle "vim-scripts/Conque-Shell"
 Bundle "kien/ctrlp.vim"
 Bundle "tyru/current-func-info.vim"
