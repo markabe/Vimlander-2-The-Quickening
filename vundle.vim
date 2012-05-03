@@ -51,11 +51,11 @@ Bundle "markabe/vim-taglist"
   " Hook in txt type from vim-txt.
   let tlist_txt_settings = 'txt;s:section;f:file'
   let tlist_coffee_settings = 'coffee;f:function;v:variable'
-Bundle "nelstrom/vim-textobj-rubyblock.git"
+Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "kana/vim-textobj-user"
-Bundle "SjB/vim-trailing-whitespace.git"
+Bundle "SjB/vim-trailing-whitespace"
 Bundle "tpope/vim-unimpaired"
-Bundle "mikewest/vimroom.git"
+Bundle "mikewest/vimroom"
 Bundle "mattn/zencoding-vim"
   let g:user_zen_settings = {
   \  'indentation' : '  '
