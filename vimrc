@@ -3,7 +3,6 @@ filetype plugin on
 " Bundle Configuration:
 
   source ~/.vim/vundle.vim
-  source ~/.vim/vundle.vim
   if filereadable(expand("~/.vim/custom_vimrc"))
     source ~/.vim/custom_vimrc
   endif
@@ -11,8 +10,8 @@ filetype plugin on
 " Colors:
 
   syntax on
-  source ~/.vim/statusbar.vim
   let g:solarized_termcolors=256
+  let g:Powerline_symbols = 'fancy'
   set background=dark
   colorscheme solarized
 
