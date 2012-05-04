@@ -179,6 +179,11 @@ filetype plugin on
   " (M)ake(C)offee.
   map <silent> <leader>mc :CoffeeMake<CR>
 
+  " Open files in directory of current file.
+  cnoremap %% <C-R>=expand('%:h').'/'<cr>
+  map <leader>e :edit %%
+  map <leader>v :view %%
+
 " Normal And General Mappings:
 
   " Yank to clipboard.
