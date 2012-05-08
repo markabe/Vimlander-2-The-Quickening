@@ -14,11 +14,6 @@ Bundle "vim-scripts/Conque-Shell"
 Bundle "kien/ctrlp.vim"
 Bundle "tyru/current-func-info.vim"
 Bundle "vim-scripts/dbext.vim"
-Bundle "vim-scripts/FuzzyFinder"
-  let g:fuf_buffertag_ctagsPath='/usr/local/bin/ctags'
-Bundle "axold/fuzzyfinder_textmate"
-  let g:fuzzy_ignore = "*.svg;*.ttf;*.psd;*.png;*.jpg;*.gif;*.exe;*.dll;*.vsmdi;*.pdb;*.pdf;*.lnk;*.sln;*.csproj;*.cache"
-  let g:fuzzy_matching_limit = 50
 Bundle "motemen/git-vim"
 Bundle "vim-scripts/grep.vim"
 Bundle "vim-scripts/L9"

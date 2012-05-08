@@ -114,9 +114,6 @@ filetype plugin on
   " (p)aste mode toggle.
   map <silent> <leader>p :set invpaste paste?<CR>
 
-  " (f)ile explorer.
-  map <silent> <leader>f :FuzzyFinderTextMate<CR>
-
   " (gr)ep for word under curser in pwd.
   map <silent> <leader>gr :Grep -r<CR><CR><CR>
 
