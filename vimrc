@@ -111,6 +111,9 @@ filetype plugin on
   " (b)uffer exporer.
   map <silent> <leader>b :BufExplorer<cr>
 
+  " (f)ile open.
+  map <silent> <leader>f :CtrlP<cr>
+
   " (p)aste mode toggle.
   map <silent> <leader>p :set invpaste paste?<CR>
 
