@@ -20,6 +20,8 @@ Bundle "vim-scripts/L9"
 Bundle "gregsexton/MatchTag"
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
+Bundle "vim-scripts/session.vim--Odding"
+  let g:session_autosave = 'no'
 Bundle "scrooloose/syntastic"
 Bundle "timcharper/textile.vim"
 Bundle "kchmck/vim-coffee-script"
