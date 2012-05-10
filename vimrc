@@ -117,9 +117,6 @@ filetype plugin on
   " (p)aste mode toggle.
   map <silent> <leader>p :set invpaste paste?<CR>
 
-  " (gr)ep for word under curser in pwd.
-  map <silent> <leader>gr :Grep -r<CR><CR><CR>
-
   " (c)hange (d)irectory to where file is.
   nmap <silent> <Leader>cd :cd %:p:h<CR>
 
@@ -235,9 +232,6 @@ filetype plugin on
 
   " Map .coffee since plugin doesn't seem to get it done.
   autocmd BufNewFile,BufRead *.coffee setfiletype coffee
-
-  " Map .scala since plugin doesn't seem to get it done.
-  autocmd BufNewFile,BufRead *.scala setfiletype scala
 
   " Make scratch buffer a txt file type.
   autocmd BufNewFile __Scratch__ setfiletype txt
