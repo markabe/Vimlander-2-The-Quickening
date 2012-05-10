@@ -134,15 +134,6 @@ filetype plugin on
   nnoremap <Leader>gc :Gcommit<Enter>
   nnoremap <Leader>gb :Gblame<Enter>
 
-  " vim-git (legacy) mappings.
-  let g:git_no_map_default = 1
-  nnoremap <Leader>gD :GitDiff --cached<Enter>
-  nnoremap <Leader>gS :GitStatus<Enter>
-  nnoremap <Leader>gL :GitLog<Enter>
-  nnoremap <Leader>gA :GitAdd<Enter>
-  nnoremap <Leader>gC :GitCommit<Enter>
-  nnoremap <Leader>gP :GitPullRebase<Enter>
-
   " (w)ord (w)rap lines at word boundaries.
   noremap <silent> <Leader>ww :call ToggleWrap()<CR>
 
