@@ -67,9 +67,9 @@ filetype plugin on
   set foldnestmax=6
   set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\'.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 
-  set wildmode=list:longest   "make cmdline tab completion similar to bash
-  set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-  set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+  set wildmode=list:longest,full   "make cmdline tab completion similar to bash
+  set wildmenu                     "enable ctrl-n and ctrl-p to scroll thru matches
+  set wildignore=*.o,*.obj,*~      "stuff to ignore when tab completing
 
   " Display tabs and trailing spaces.
   set list
