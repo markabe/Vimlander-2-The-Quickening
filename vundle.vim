@@ -41,6 +41,7 @@ Bundle "markabe/vim-taglist"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "kana/vim-textobj-user"
 Bundle "SjB/vim-trailing-whitespace"
+Bundle "chriskempson/vim-tomorrow-theme"
 Bundle "tpope/vim-unimpaired"
 Bundle "mattn/zencoding-vim"
   let g:user_zen_settings = {
