@@ -5,12 +5,12 @@ call vundle#rc()
 Bundle "git@github.com:markabe/snipmate.vim.git"
 Bundle "git@github.com:markabe/vim-scratch.git"
 Bundle "git@github.com:markabe/vim-spacial.git"
-Bundle "git@github.com:markabe/vim-txt.git"
 Bundle "git@github.com:markabe/vim-taglist"
   let Tlist_Show_One_File = 1
   " Hook in txt type from vim-txt.
   let tlist_txt_settings = 'txt;s:section;f:file'
   let tlist_coffee_settings = 'coffee;f:function;v:variable'
+Bundle "git@github.com:markabe/vim-txt.git"
 
 " Bundles:
 Bundle "mileszs/ack.vim"
