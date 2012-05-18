@@ -159,7 +159,7 @@ filetype plugin on
   map <silent> <leader>z :ConqueTerm zsh<CR>
 
   " Taglist (o)utline.
-  map <silent> <leader>o :TlistToggle<CR>
+  map <silent> <leader>o :TagbarToggle<CR>
 
   " Sc(r)atch window.
   map <silent> <leader>r :ScratchToggle<CR>

@@ -31,6 +31,7 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "janx/vim-rubytest"
 Bundle "tsaleh/vim-supertab"
 Bundle "tpope/vim-surround"
+Bundle "majutsushi/tagbar"
 Bundle "markabe/vim-taglist"
   let Tlist_Show_One_File = 1
   " Hook in txt type from vim-txt.
