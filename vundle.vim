@@ -22,6 +22,7 @@ Bundle "scrooloose/nerdtree"
 Bundle "vim-scripts/session.vim--Odding"
   let g:session_autosave = 'no'
 Bundle "scrooloose/syntastic"
+Bundle "godlygeek/tabular.git"
 Bundle "kchmck/vim-coffee-script"
 Bundle "altercation/vim-colors-solarized"
 Bundle "tpope/vim-commentary"
