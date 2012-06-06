@@ -104,6 +104,9 @@ filetype plugin on
 
   let mapleader = ","
 
+  " (a)ck (f)or word under cursor.
+  map <silent> <leader>af :Ack<cr>
+
   " (d)irectory explorer.
   map <silent> <leader>d :NERDTreeToggle<cr>
   map <silent> <leader>D :NERDTree %<cr>
