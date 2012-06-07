@@ -104,6 +104,9 @@ filetype plugin on
 
   let mapleader = ","
 
+  " New tab.
+  map <silent> <leader>t :tabnew<CR>
+
   " (a)ck (f)or word under cursor.
   map <silent> <leader>af :Ack<cr>
 
@@ -125,6 +128,12 @@ filetype plugin on
 
   " Switch to last buffer.
   map <silent> <leader><Tab> :b#<CR>
+
+  " Copy filename.
+  map <silent> <leader>. :let @+=expand('%:p').':'.line('.')<CR>
+
+  " Copy path.
+  map <silent> <leader>/ :let @+=expand('%:p:h')<CR>
 
   " vim-fugitive mappings.
   nnoremap <Leader>gd :Gdiff<Enter>
@@ -185,9 +194,6 @@ filetype plugin on
 
   " Make Y consistent with C and D and go to clipboard.
   nnoremap Y "+y$
-
-  " New tab.
-  map <C-t> :tabnew<CR>
 
   " Turn off search highlighting with enter key.
   nnoremap <CR> :nohls<CR><CR>
