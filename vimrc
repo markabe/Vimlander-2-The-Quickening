@@ -27,6 +27,9 @@ filetype plugin on
   set directory=~/.vim/tmp
   set backupdir=~/.vim/tmp
 
+  " Yanks go on clipboard instead.
+  set clipboard+=unnamed
+
   " Allow backspacing over everything in insert mode.
   set backspace=indent,eol,start
 
@@ -185,15 +188,6 @@ filetype plugin on
   map <leader>v :view %%
 
 " Normal And General Mappings:
-
-  " Yank to clipboard.
-  vnoremap y "+y
-
-  " Yank to clipboard.
-  nnoremap yy "+yy
-
-  " Make Y consistent with C and D and go to clipboard.
-  nnoremap Y "+y$
 
   " Turn off search highlighting with enter key.
   nnoremap <CR> :nohls<CR><CR>
