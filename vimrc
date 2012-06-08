@@ -189,6 +189,9 @@ filetype plugin on
 
 " Normal And General Mappings:
 
+  " Make Y consistent with C and D.
+  nnoremap Y y$
+
   " Turn off search highlighting with enter key.
   nnoremap <CR> :nohls<CR><CR>
 
