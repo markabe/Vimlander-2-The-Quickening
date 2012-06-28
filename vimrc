@@ -181,8 +181,9 @@ filetype plugin on
 
   " Open files in directory of current file.
   cnoremap %% <C-R>=expand('%:h').'/'<cr>
-  map <leader>e :edit %%
-  map <leader>v :view %%
+  map <leader>E :edit %%
+  map <leader>e :edit ~/
+  map <leader>l :lcd ~/
 
 " Normal And General Mappings:
 
